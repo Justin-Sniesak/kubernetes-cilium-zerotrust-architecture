@@ -4,7 +4,7 @@ metadata:
   name: busybox-rule
   namespace: client
 spec:
-  description: "L3-L4 policy to restrict all ingress trafiic to the busybox deployment and only allow egress traffic to http-echo, nginx, traefik. DNS also allowed"
+  description: "L4 policy to restrict all ingress trafiic to the busybox deployment and only allow egress traffic to http-echo, nginx, traefik. DNS also allowed"
   endpointSelector: 
     matchLabels: 
       app: busybox
