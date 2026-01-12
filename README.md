@@ -17,18 +17,20 @@ kubernetes-cilium-zerotrust-architecture/
 │   └── kubernetes-cilium-zerotrust-architecture.png
 ├── manifests/
 │   ├── client/
-│   │   └── busybox.yaml
+│   │   └── greenDeployment.yaml
 │   ├── edge/
-│   │   ├── traefik-deployment.yaml
-│   │   └── traefik-service.yaml
+│   │   ├── pinkDeployment.yaml
+│   │   └── traefikService.yaml
 │   ├── backend/
-│   │   ├── nginx.yaml
-│   │   └── http-echo.yaml
+│   │   ├── scarletDeployment.yaml
+│   │   ├── yellowDeployment.yaml
+│   │   ├── echoService.yaml
+│   │   └── nginxService.yaml
 │   └── cilium/
-│       ├── busybox-egress-cnp.yaml
-│       ├── ztp-nginx-cnp.yaml
-│       ├── ztp-http-echo-cnp.yaml
-│       └── ztp-traefik-cnp.yaml
+│       ├── busyboxCnp.yaml
+│       ├── ztpNginxCnp.yaml
+│       ├── ztpEchoCnp.yaml
+│       └── ztpTraefikCnp.yaml
 ├── Cluster/
 │   └── *.jpg
 └── Cilium/
