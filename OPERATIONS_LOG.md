@@ -36,21 +36,21 @@
 - 2026-01-11 Validate can filter for DROPPED traffic via hubble.
   ![cil4](Cilium/cil4.jpg)
 - 2026-01-11 Invoke Cilium dbg utility via one of the Cilium pods and inspect endpoint ingress/egress policy enforcement.
-  ![cil5](Cilium/cl5.jpg)
+  ![cil5](Cilium/cil5.jpg)
 - 2026-01-11 Edge namespace hubble UX observability validated.
-  ![cil6](Cilium/cl6.jpg)
+  ![cil6](Cilium/cil6.jpg)
 - 2026-01-11 Client namespace hubble UX observability validated.
-  ![cil7](Cilium/cl7.jpg)
+  ![cil7](Cilium/cil7.jpg)
 - 2026-01-11 Backend namespace hubble UX observability validated.
-  ![cil8](Cilium/cl8.jpg)
+  ![cil8](Cilium/cil8.jpg)
 - 2026-01-11 Validate hubble observe functionality and flows are being captured.
-  ![cil9](Cilium/cl9.jpg)
+  ![cil9](Cilium/cil9.jpg)
 - 2026-01-11 Validate hubble observe is properly logging traffic.
-  ![cil10](Cilium/cl10.jpg)
+  ![cil10](Cilium/cil10.jpg)
 - 2026-01-11 Validate all Cilium Network Policies are active in cluster and properly namespaced-scoped, including zero trust.
-  ![cil11](Cilium/cl11.jpg)
+  ![cil11](Cilium/cil11.jpg)
 - 2026-01-11 Validate Cilium Network Policies are being enforced after validating namespace scoping.
-  ![cil12](Cilium/cl12.jpg)
+  ![cil12](Cilium/cil12.jpg)
 
 ## Key Lessons Learned
 - Cilium CNP enforcement is namespace-scoped and silently fails if misapplied
