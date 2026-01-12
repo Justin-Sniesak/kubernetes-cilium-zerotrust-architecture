@@ -2,7 +2,7 @@
 **Summary:** Create VMs via Parallels Desktop, create three node cluster via kubeadm, join worker nodes to controlplane node, install Helm
 
 - 2026-01-10 Install Ubuntu Server on all three VMs - configure hostname and IP, validate connectivity to other VMs.
-  ![cl1-1](../Cluster/cl1-1.jpg)
+  ![cl1](../Cluster/cl1.jpg)
 - 2026-01-10 Install containerd on node01 and validate running.
   ![cl1-2](../Cluster/cl1-2.jpg)
 - 2026-01-10 Install containerd on node02 and validate running.
