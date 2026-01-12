@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-deployment
+  namespace: client
+  labels:
+    app: busybox
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node-01
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
+      containers:
+      - name: buybox
+        image: busybox:1.37.0-musl
+        securityContext:
+          allowPrivilegeEscalation: false
+        command:
+          - sh
+          - -c
+          - |
+            while true; do
+              wget -qO- http://nginx.backend.svc.cluster.local
+              wget -qO- http://http-echo.backend.svc.cluster.local
+              wget -qO- http://traefik.edge.svc.cluster.local
+              sleep 6
+            done
