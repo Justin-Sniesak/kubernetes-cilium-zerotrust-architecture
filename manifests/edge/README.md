@@ -1,1 +1,1 @@
-Traefik deployment manifest goes here.
+Traefik deployment and service manifests go here.
