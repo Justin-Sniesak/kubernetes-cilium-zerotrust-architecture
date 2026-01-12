@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scarlet-deployment
+  namespace: backend
+  labels:
+    app: http-echo
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  selector:
+    matchLabels:
+      app: http-echo
+  template:
+    metadata:
+      labels:
+        app: http-echo
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node-02
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
+      containers:
+      - name: http-echo
+        image: hashicorp/http-echo:latest
+        securityContext:
+          allowPrivilegeEscalation: false
+        args:
+          - "-text=SCARLET BACKEND"
+          - "-listen=:5678"
+        ports:
+        - containerPort: 5678
