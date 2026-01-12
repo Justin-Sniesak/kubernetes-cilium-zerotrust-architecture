@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pink-deployment
+  namespace: edge
+  labels:
+    app: traefik
+spec:
+  replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  selector:
+    matchLabels:
+      app: traefik
+  template:
+    metadata:
+      labels:
+        app: traefik
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: node-01
+      securityContext:
+        runAsUser: 1000
+        runAsNonRoot: true
+      containers:
+      - name: traefik
+        image: traefik/whoami:v1.11
+        securityContext:
+          allowPrivilegeEscalation: false
+        ports:
+        - containerPort: 80
