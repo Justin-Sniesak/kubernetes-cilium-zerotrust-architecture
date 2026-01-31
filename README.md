@@ -13,6 +13,7 @@ This is not a tutorial or a reference architecture copied from documentation. It
 ```
 kubernetes-cilium-zerotrust-architecture/
 ├── README.md
+├── LISCENCE.md
 ├── architecture/
 │   └── kubernetes-cilium-zerotrust-architecture.png
 ├── manifests/
